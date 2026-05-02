@@ -41,7 +41,7 @@ apis:
         url: >-
           https://learn.liferay.com/w/dxp/integration/headless-apis/user-management-apis/roles-api-basics
       - type: OpenAPI
-        url: https://raw.githubusercontent.com/api-evangelist/liferay/refs/heads/main/apis/liferay-openapi.yml
+        url: https://raw.githubusercontent.com/api-evangelist/liferay/refs/heads/main/openapi/liferay-openapi.yml
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com

@@ -44,7 +44,7 @@ Liferay's headless admin user Roles API. Create and manage roles via REST: list 
 #### Properties
 
 - [Documentation](https://learn.liferay.com/w/dxp/integration/headless-apis/user-management-apis/roles-api-basics)
-- [OpenAPI](https://raw.githubusercontent.com/api-evangelist/liferay/refs/heads/main/apis/liferay-openapi.yml)
+- [OpenAPI](https://raw.githubusercontent.com/api-evangelist/liferay/refs/heads/main/openapi/liferay-openapi.yml)
 
 ## Maintainers
 
