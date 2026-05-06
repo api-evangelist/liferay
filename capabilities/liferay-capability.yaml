@@ -1,0 +1,278 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Liferay Roles API
+  description: Roles API Basics. You can create and manage roles from the Application menu, but you can also use Liferay's
+    REST APIs. Call these services to manage roles, including associating and dissociating users to regular, site, and organization
+    roles.
+  tags:
+  - Liferay
+  - API
+  created: '2026-05-06'
+  modified: '2026-05-06'
+capability:
+  consumes:
+  - type: http
+    namespace: liferay
+    baseUri: http://localhost:8080/o/headless-admin-user/v1.0
+    description: Liferay Roles API HTTP API.
+    authentication:
+      type: basic
+      username: '{{LIFERAY_USERNAME}}'
+      password: '{{LIFERAY_PASSWORD}}'
+    resources:
+    - name: roles
+      path: /roles
+      operations:
+      - name: getroles
+        method: GET
+        description: List roles
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: roles-roleid
+      path: /roles/{roleId}
+      operations:
+      - name: getrole
+        method: GET
+        description: Get a role
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: roles-roleid-association-user-account-userid
+      path: /roles/{roleId}/association/user-account/{userId}
+      operations:
+      - name: associateroletouser
+        method: POST
+        description: Associate a regular role to a user
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+      - name: dissociaterolefromuser
+        method: DELETE
+        description: Remove regular role association from a user
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: roles-roleid-association-user-account-userid-sit
+      path: /roles/{roleId}/association/user-account/{userId}/site/{siteId}
+      operations:
+      - name: associatesiteroletouser
+        method: POST
+        description: Associate a site role to a user
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+      - name: dissociatesiterolefromuser
+        method: DELETE
+        description: Remove site role association from a user
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: roles-roleid-association-user-account-userid-org
+      path: /roles/{roleId}/association/user-account/{userId}/organization/{orgId}
+      operations:
+      - name: associateorgroletouser
+        method: POST
+        description: Associate an organization role to a user
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+      - name: dissociateorgrolefromuser
+        method: DELETE
+        description: Remove organization role association from a user
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+  exposes:
+  - type: rest
+    port: 8080
+    namespace: liferay-rest
+    description: REST adapter for Liferay Roles API.
+    resources:
+    - path: /roles
+      name: getroles
+      operations:
+      - method: GET
+        name: getroles
+        description: List roles
+        call: liferay.getroles
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /roles/{roleId}
+      name: getrole
+      operations:
+      - method: GET
+        name: getrole
+        description: Get a role
+        call: liferay.getrole
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /roles/{roleId}/association/user-account/{userId}
+      name: associateroletouser
+      operations:
+      - method: POST
+        name: associateroletouser
+        description: Associate a regular role to a user
+        call: liferay.associateroletouser
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /roles/{roleId}/association/user-account/{userId}
+      name: dissociaterolefromuser
+      operations:
+      - method: DELETE
+        name: dissociaterolefromuser
+        description: Remove regular role association from a user
+        call: liferay.dissociaterolefromuser
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /roles/{roleId}/association/user-account/{userId}/site/{siteId}
+      name: associatesiteroletouser
+      operations:
+      - method: POST
+        name: associatesiteroletouser
+        description: Associate a site role to a user
+        call: liferay.associatesiteroletouser
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /roles/{roleId}/association/user-account/{userId}/site/{siteId}
+      name: dissociatesiterolefromuser
+      operations:
+      - method: DELETE
+        name: dissociatesiterolefromuser
+        description: Remove site role association from a user
+        call: liferay.dissociatesiterolefromuser
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /roles/{roleId}/association/user-account/{userId}/organization/{orgId}
+      name: associateorgroletouser
+      operations:
+      - method: POST
+        name: associateorgroletouser
+        description: Associate an organization role to a user
+        call: liferay.associateorgroletouser
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /roles/{roleId}/association/user-account/{userId}/organization/{orgId}
+      name: dissociateorgrolefromuser
+      operations:
+      - method: DELETE
+        name: dissociateorgrolefromuser
+        description: Remove organization role association from a user
+        call: liferay.dissociateorgrolefromuser
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    port: 9090
+    namespace: liferay-mcp
+    transport: http
+    description: MCP adapter for Liferay Roles API for AI agent use.
+    tools:
+    - name: getroles
+      description: List roles
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: liferay.getroles
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: getrole
+      description: Get a role
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: liferay.getrole
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: associateroletouser
+      description: Associate a regular role to a user
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: liferay.associateroletouser
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: dissociaterolefromuser
+      description: Remove regular role association from a user
+      hints:
+        readOnly: false
+        destructive: true
+        idempotent: true
+      call: liferay.dissociaterolefromuser
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: associatesiteroletouser
+      description: Associate a site role to a user
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: liferay.associatesiteroletouser
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: dissociatesiterolefromuser
+      description: Remove site role association from a user
+      hints:
+        readOnly: false
+        destructive: true
+        idempotent: true
+      call: liferay.dissociatesiterolefromuser
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: associateorgroletouser
+      description: Associate an organization role to a user
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: liferay.associateorgroletouser
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: dissociateorgrolefromuser
+      description: Remove organization role association from a user
+      hints:
+        readOnly: false
+        destructive: true
+        idempotent: true
+      call: liferay.dissociateorgrolefromuser
+      outputParameters:
+      - type: object
+        mapping: $.
+binds:
+- namespace: env
+  keys:
+    LIFERAY_USERNAME: LIFERAY_USERNAME
+    LIFERAY_PASSWORD: LIFERAY_PASSWORD
