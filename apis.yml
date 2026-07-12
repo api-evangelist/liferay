@@ -21,10 +21,18 @@ modified: '2026-05-19'
 url: https://raw.githubusercontent.com/api-evangelist/liferay/refs/heads/main/apis.yml
 specificationVersion: '0.19'
 common:
+  - type: VulnerabilityDisclosure
+    url: security/liferay-vulnerability-disclosure.yml
+  - type: DomainSecurity
+    url: security/liferay-domain-security.yml
+  - type: Authentication
+    url: authentication/liferay-authentication.yml
   - type: GitHubOrganization
     url: https://github.com/liferay
   - type: LinkedIn
     url: https://www.linkedin.com/company/liferay-inc-
+  - url: https://www.liferay.com/blog
+    type: Blog
 apis:
   - aid: liferay:liferay
     name: Liferay Roles API
