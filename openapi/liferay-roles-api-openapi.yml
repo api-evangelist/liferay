@@ -1,28 +1,24 @@
 openapi: 3.0.3
 info:
   title: Liferay Roles API
-  description: >-
-    Roles API Basics. You can create and manage roles from the Application
-    menu, but you can also use Liferay's REST APIs. Call these services to
-    manage roles, including associating and dissociating users to regular,
-    site, and organization roles.
+  description: Roles API Basics. You can create and manage roles from the Application menu, but you can also use Liferay's REST APIs. Call these services to manage roles, including associating and dissociating users to regular, site, and organization roles.
   version: v1.0
   contact:
     name: Liferay
     url: https://learn.liferay.com/w/dxp/integration/headless-apis/user-management-apis/roles-api-basics
 servers:
-  - url: http://localhost:8080/o/headless-admin-user/v1.0
-    description: Default Liferay headless admin user API base URL
+- url: http://localhost:8080/o/headless-admin-user/v1.0
+  description: Default Liferay headless admin user API base URL
 security:
-  - basicAuth: []
+- basicAuth: []
 tags:
-  - name: Roles
-    description: Manage roles and role associations
+- name: Roles
+  description: Manage roles and role associations
 paths:
   /roles:
     get:
       tags:
-        - Roles
+      - Roles
       summary: List roles
       description: Returns the collection of roles available in Liferay.
       operationId: getRoles
@@ -36,12 +32,12 @@ paths:
   /roles/{roleId}:
     get:
       tags:
-        - Roles
+      - Roles
       summary: Get a role
       description: Returns a single role identified by its ID.
       operationId: getRole
       parameters:
-        - $ref: '#/components/parameters/RoleId'
+      - $ref: '#/components/parameters/RoleId'
       responses:
         '200':
           description: The requested role
@@ -52,89 +48,78 @@ paths:
   /roles/{roleId}/association/user-account/{userId}:
     post:
       tags:
-        - Roles
+      - Roles
       summary: Associate a regular role to a user
       operationId: associateRoleToUser
       parameters:
-        - $ref: '#/components/parameters/RoleId'
-        - $ref: '#/components/parameters/UserId'
+      - $ref: '#/components/parameters/RoleId'
+      - $ref: '#/components/parameters/UserId'
       responses:
         '204':
           description: Association created
     delete:
       tags:
-        - Roles
+      - Roles
       summary: Remove regular role association from a user
       operationId: dissociateRoleFromUser
       parameters:
-        - $ref: '#/components/parameters/RoleId'
-        - $ref: '#/components/parameters/UserId'
+      - $ref: '#/components/parameters/RoleId'
+      - $ref: '#/components/parameters/UserId'
       responses:
         '204':
           description: Association removed
   /roles/{roleId}/association/user-account/{userId}/site/{siteId}:
     post:
       tags:
-        - Roles
+      - Roles
       summary: Associate a site role to a user
       operationId: associateSiteRoleToUser
       parameters:
-        - $ref: '#/components/parameters/RoleId'
-        - $ref: '#/components/parameters/UserId'
-        - $ref: '#/components/parameters/SiteId'
+      - $ref: '#/components/parameters/RoleId'
+      - $ref: '#/components/parameters/UserId'
+      - $ref: '#/components/parameters/SiteId'
       responses:
         '204':
           description: Association created
     delete:
       tags:
-        - Roles
+      - Roles
       summary: Remove site role association from a user
       operationId: dissociateSiteRoleFromUser
       parameters:
-        - $ref: '#/components/parameters/RoleId'
-        - $ref: '#/components/parameters/UserId'
-        - $ref: '#/components/parameters/SiteId'
+      - $ref: '#/components/parameters/RoleId'
+      - $ref: '#/components/parameters/UserId'
+      - $ref: '#/components/parameters/SiteId'
       responses:
         '204':
           description: Association removed
   /roles/{roleId}/association/user-account/{userId}/organization/{orgId}:
     post:
       tags:
-        - Roles
+      - Roles
       summary: Associate an organization role to a user
       operationId: associateOrgRoleToUser
       parameters:
-        - $ref: '#/components/parameters/RoleId'
-        - $ref: '#/components/parameters/UserId'
-        - $ref: '#/components/parameters/OrgId'
+      - $ref: '#/components/parameters/RoleId'
+      - $ref: '#/components/parameters/UserId'
+      - $ref: '#/components/parameters/OrgId'
       responses:
         '204':
           description: Association created
     delete:
       tags:
-        - Roles
+      - Roles
       summary: Remove organization role association from a user
       operationId: dissociateOrgRoleFromUser
       parameters:
-        - $ref: '#/components/parameters/RoleId'
-        - $ref: '#/components/parameters/UserId'
-        - $ref: '#/components/parameters/OrgId'
+      - $ref: '#/components/parameters/RoleId'
+      - $ref: '#/components/parameters/UserId'
+      - $ref: '#/components/parameters/OrgId'
       responses:
         '204':
           description: Association removed
 components:
-  securitySchemes:
-    basicAuth:
-      type: http
-      scheme: basic
   parameters:
-    RoleId:
-      in: path
-      name: roleId
-      required: true
-      schema:
-        type: integer
-        format: int64
     UserId:
       in: path
       name: userId
@@ -142,9 +127,9 @@ components:
       schema:
         type: integer
         format: int64
-    SiteId:
+    RoleId:
       in: path
-      name: siteId
+      name: roleId
       required: true
       schema:
         type: integer
@@ -152,6 +137,13 @@ components:
     OrgId:
       in: path
       name: orgId
+      required: true
+      schema:
+        type: integer
+        format: int64
+    SiteId:
+      in: path
+      name: siteId
       required: true
       schema:
         type: integer
@@ -170,9 +162,9 @@ components:
         roleType:
           type: string
           enum:
-            - regular
-            - site
-            - organization
+          - regular
+          - site
+          - organization
         dateCreated:
           type: string
           format: date-time
@@ -192,3 +184,7 @@ components:
           type: integer
         totalCount:
           type: integer
+  securitySchemes:
+    basicAuth:
+      type: http
+      scheme: basic
