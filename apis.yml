@@ -5,9 +5,22 @@ description: >-
   permissions, content, and site configuration. The Roles API lets you list, retrieve, and associate or dissociate
   regular, site, and organization roles for users.
 type: Index
+accessModel:
+  pricing: freemium
+  onboarding: self-serve
+  trial: false
+  try_now: true
+  public: false
+  label: Freemium · Self-serve signup
+  confidence: high
+  source:
+  - plans
+  - authentication
+  generated: '2026-07-22'
+  method: derived
 position: Consumer
 access: 3rd-Party
-image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/liferay.png
 tags:
   - Open Source
   - Digital Experience
@@ -36,22 +49,20 @@ common:
   - url: https://www.liferay.com/blog
     type: Blog
 apis:
-  - aid: liferay:liferay
-    name: Liferay Roles API
-    description: >-
-      Liferay's headless admin user Roles API. Create and manage roles via REST: list and retrieve roles, and associate
-      or dissociate users to regular, site, and organization roles.
-    humanURL: https://learn.liferay.com/w/dxp/integration/headless-apis/user-management-apis/roles-api-basics
-    baseURL: http://localhost:8080/o/headless-admin-user/v1.0
-    tags:
-      - Roles
-      - Users
-      - Permissions
-    properties:
-      - type: Documentation
-        url: https://learn.liferay.com/w/dxp/integration/headless-apis/user-management-apis/roles-api-basics
-      - type: OpenAPI
-        url: https://raw.githubusercontent.com/api-evangelist/liferay/refs/heads/main/openapi/liferay-openapi.yml
+- aid: liferay:liferay-roles-api
+  name: Liferay Roles API
+  description: Manage roles and role associations
+  humanURL: >-
+    https://learn.liferay.com/w/dxp/integration/headless-apis/user-management-apis/roles-api-basics
+  baseURL: http://localhost:8080/o/headless-admin-user/v1.0
+  tags:
+  - Roles
+  properties:
+  - type: OpenAPI
+    url: openapi/liferay-roles-api-openapi.yml
+  - type: Documentation
+    url: >-
+      https://learn.liferay.com/w/dxp/integration/headless-apis/user-management-apis/roles-api-basics
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com
