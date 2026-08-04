@@ -1,0 +1,14 @@
+{
+  "provider": "liferay",
+  "sources": [
+    "liferay-roles-api-openapi.yml"
+  ],
+  "outputs": [
+    "liferay-roles-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}
