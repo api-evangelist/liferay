@@ -1,0 +1,212 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Liferay Roles API",
+    "version": "v1.0"
+  },
+  "request": {
+    "auth": {
+      "type": "basic",
+      "username": "{{username}}",
+      "password": "{{password}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Roles",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List roles",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://localhost:8080/o/headless-admin-user/v1.0/roles"
+          },
+          "docs": "Returns the collection of roles available in Liferay."
+        },
+        {
+          "info": {
+            "name": "Get a role",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://localhost:8080/o/headless-admin-user/v1.0/roles/:roleId",
+            "params": [
+              {
+                "name": "roleId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Returns a single role identified by its ID."
+        },
+        {
+          "info": {
+            "name": "Associate a regular role to a user",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "http://localhost:8080/o/headless-admin-user/v1.0/roles/:roleId/association/user-account/:userId",
+            "params": [
+              {
+                "name": "roleId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "userId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Associate a regular role to a user"
+        },
+        {
+          "info": {
+            "name": "Remove regular role association from a user",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "http://localhost:8080/o/headless-admin-user/v1.0/roles/:roleId/association/user-account/:userId",
+            "params": [
+              {
+                "name": "roleId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "userId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Remove regular role association from a user"
+        },
+        {
+          "info": {
+            "name": "Associate a site role to a user",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "http://localhost:8080/o/headless-admin-user/v1.0/roles/:roleId/association/user-account/:userId/site/:siteId",
+            "params": [
+              {
+                "name": "roleId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "userId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "siteId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Associate a site role to a user"
+        },
+        {
+          "info": {
+            "name": "Remove site role association from a user",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "http://localhost:8080/o/headless-admin-user/v1.0/roles/:roleId/association/user-account/:userId/site/:siteId",
+            "params": [
+              {
+                "name": "roleId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "userId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "siteId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Remove site role association from a user"
+        },
+        {
+          "info": {
+            "name": "Associate an organization role to a user",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "http://localhost:8080/o/headless-admin-user/v1.0/roles/:roleId/association/user-account/:userId/organization/:orgId",
+            "params": [
+              {
+                "name": "roleId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "userId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "orgId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Associate an organization role to a user"
+        },
+        {
+          "info": {
+            "name": "Remove organization role association from a user",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "http://localhost:8080/o/headless-admin-user/v1.0/roles/:roleId/association/user-account/:userId/organization/:orgId",
+            "params": [
+              {
+                "name": "roleId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "userId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "orgId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Remove organization role association from a user"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
