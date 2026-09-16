@@ -1,9 +1,8 @@
 aid: liferay
 name: Liferay
-description: >-
-  Liferay DXP is an open-source digital experience platform offering headless REST APIs for managing users, roles,
-  permissions, content, and site configuration. The Roles API lets you list, retrieve, and associate or dissociate
-  regular, site, and organization roles for users.
+description: Liferay DXP is an open-source digital experience platform offering headless REST APIs for
+  managing users, roles, permissions, content, and site configuration. The Roles API lets you list, retrieve,
+  and associate or dissociate regular, site, and organization roles for users.
 type: Index
 deliveryModel:
   model: unknown
@@ -35,46 +34,47 @@ position: Consuming
 access: 3rd-Party
 image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/liferay.png
 tags:
-  - Open-Source
-  - Digital Experience
-  - DXP
-  - Roles
-  - User
-  - Permissions
-  - Headless
+- Open-Source
+- Digital Experience
+- DXP
+- Roles
+- User
+- Permissions
+- Headless
 tags_raw:
-  - Open Source
-  - Digital Experience
-  - DXP
-  - Roles
-  - Users
-  - Permissions
-  - Headless
+- Open Source
+- Digital Experience
+- DXP
+- Roles
+- Users
+- Permissions
+- Headless
 created: '2025-01-08'
-modified: '2026-05-19'
+modified: '2026-09-16'
 url: https://raw.githubusercontent.com/api-evangelist/liferay/refs/heads/main/apis.yml
 specificationVersion: '0.23'
 common:
-  - type: AgenticAccess
-    url: agentic-access/liferay-agentic-access.yml
-  - type: VulnerabilityDisclosure
-    url: security/liferay-vulnerability-disclosure.yml
-  - type: DomainSecurity
-    url: security/liferay-domain-security.yml
-  - type: Authentication
-    url: authentication/liferay-authentication.yml
-  - type: GitHubOrganization
-    url: https://github.com/liferay
-  - type: LinkedIn
-    url: https://www.linkedin.com/company/liferay-inc-
-  - url: https://www.liferay.com/blog
-    type: Blog
+- type: Website
+  url: https://liferay.com
+- type: AgenticAccess
+  url: agentic-access/liferay-agentic-access.yml
+- type: VulnerabilityDisclosure
+  url: security/liferay-vulnerability-disclosure.yml
+- type: DomainSecurity
+  url: security/liferay-domain-security.yml
+- type: Authentication
+  url: authentication/liferay-authentication.yml
+- type: GitHubOrganization
+  url: https://github.com/liferay
+- type: LinkedIn
+  url: https://www.linkedin.com/company/liferay-inc-
+- url: https://www.liferay.com/blog
+  type: Blog
 apis:
 - aid: liferay:liferay-roles-api
   name: Liferay Roles API
   description: Manage roles and role associations
-  humanURL: >-
-    https://learn.liferay.com/w/dxp/integration/headless-apis/user-management-apis/roles-api-basics
+  humanURL: https://learn.liferay.com/w/dxp/integration/headless-apis/user-management-apis/roles-api-basics
   baseURL: http://localhost:8080/o/headless-admin-user/v1.0
   tags:
   - Roles
@@ -82,8 +82,7 @@ apis:
   - type: OpenAPI
     url: openapi/liferay-roles-api-openapi.yml
   - type: Documentation
-    url: >-
-      https://learn.liferay.com/w/dxp/integration/headless-apis/user-management-apis/roles-api-basics
+    url: https://learn.liferay.com/w/dxp/integration/headless-apis/user-management-apis/roles-api-basics
 maintainers:
-  - FN: Kin Lane
-    email: kin@apievangelist.com
+- FN: Kin Lane
+  email: kin@apievangelist.com
