@@ -34,7 +34,7 @@ position: Consuming
 access: 3rd-Party
 image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/liferay.png
 tags:
-- Open-Source
+- Open Source
 - Digital Experience
 - DXP
 - Roles
@@ -49,6 +49,7 @@ tags_raw:
 - Users
 - Permissions
 - Headless
+- Open-Source
 created: '2025-01-08'
 modified: '2026-09-16'
 url: https://raw.githubusercontent.com/api-evangelist/liferay/refs/heads/main/apis.yml

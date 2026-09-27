@@ -119,6 +119,35 @@ paths:
         '204':
           description: Association removed
 components:
+  parameters:
+    RoleId:
+      in: path
+      name: roleId
+      required: true
+      schema:
+        type: integer
+        format: int64
+    UserId:
+      in: path
+      name: userId
+      required: true
+      schema:
+        type: integer
+        format: int64
+    OrgId:
+      in: path
+      name: orgId
+      required: true
+      schema:
+        type: integer
+        format: int64
+    SiteId:
+      in: path
+      name: siteId
+      required: true
+      schema:
+        type: integer
+        format: int64
   schemas:
     RolePage:
       type: object
@@ -155,35 +184,6 @@ components:
         dateModified:
           type: string
           format: date-time
-  parameters:
-    SiteId:
-      in: path
-      name: siteId
-      required: true
-      schema:
-        type: integer
-        format: int64
-    RoleId:
-      in: path
-      name: roleId
-      required: true
-      schema:
-        type: integer
-        format: int64
-    UserId:
-      in: path
-      name: userId
-      required: true
-      schema:
-        type: integer
-        format: int64
-    OrgId:
-      in: path
-      name: orgId
-      required: true
-      schema:
-        type: integer
-        format: int64
   securitySchemes:
     basicAuth:
       type: http
