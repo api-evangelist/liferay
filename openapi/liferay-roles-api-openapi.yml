@@ -134,16 +134,16 @@ components:
       schema:
         type: integer
         format: int64
-    OrgId:
+    SiteId:
       in: path
-      name: orgId
+      name: siteId
       required: true
       schema:
         type: integer
         format: int64
-    SiteId:
+    OrgId:
       in: path
-      name: siteId
+      name: orgId
       required: true
       schema:
         type: integer
