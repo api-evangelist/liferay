@@ -55,6 +55,12 @@ modified: '2026-09-16'
 url: https://raw.githubusercontent.com/api-evangelist/liferay/refs/heads/main/apis.yml
 specificationVersion: '0.23'
 common:
+- type: Plans
+  url: plans/liferay-plans-pricing.yml
+- type: RateLimits
+  url: rate-limits/liferay-rate-limits.yml
+- type: FinOps
+  url: finops/liferay-finops.yml
 - type: CapabilityMap
   url: capabilities/liferay-capability-edges.yml
   name: Liferay Business Capability Map
