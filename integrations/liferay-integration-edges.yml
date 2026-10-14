@@ -1,0 +1,23 @@
+generated: '2026-10-14'
+method: searched
+checked:
+- https://plugins.jetbrains.com/
+marketplace_apps: []
+edges:
+- partner_name: JetBrains Marketplace
+  partner: jetbrains
+  partner_match: aggregator
+  type: marketplace
+  marketplace: jetbrains
+  channel: partner-built
+  relationship: platform-app
+  direction: third-party
+  evidence: https://plugins.jetbrains.com/vendor/a0855ed1-6037-407c-920d-97e73337c40b
+  listing_count: 1
+  apps:
+  - Liferay
+  publisher_name: Liferay, Inc.
+  detected_by: sweep-devtools.py
+  detected: '2026-10-14'
+source:
+- https://plugins.jetbrains.com/
