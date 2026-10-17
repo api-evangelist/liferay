@@ -156,9 +156,9 @@ components:
         totalCount:
           type: integer
   parameters:
-    OrgId:
+    RoleId:
       in: path
-      name: orgId
+      name: roleId
       required: true
       schema:
         type: integer
@@ -170,16 +170,16 @@ components:
       schema:
         type: integer
         format: int64
-    SiteId:
+    OrgId:
       in: path
-      name: siteId
+      name: orgId
       required: true
       schema:
         type: integer
         format: int64
-    RoleId:
+    SiteId:
       in: path
-      name: roleId
+      name: siteId
       required: true
       schema:
         type: integer
